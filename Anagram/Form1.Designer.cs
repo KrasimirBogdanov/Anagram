@@ -1,6 +1,6 @@
 ﻿namespace Anagram
 {
-    partial class Form1
+    partial class Anagram
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,48 +28,64 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.checkAnagram = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.Anagrams = new System.Windows.Forms.Button();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // checkAnagram
             // 
-            this.button1.FlatAppearance.BorderSize = 10;
-            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.Location = new System.Drawing.Point(311, 34);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 102);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Check Anagram\r\nand \r\nDisplay";
-            this.button1.UseVisualStyleBackColor = true;
+            this.checkAnagram.FlatAppearance.BorderSize = 10;
+            this.checkAnagram.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.checkAnagram.Location = new System.Drawing.Point(12, 21);
+            this.checkAnagram.Name = "checkAnagram";
+            this.checkAnagram.Size = new System.Drawing.Size(174, 102);
+            this.checkAnagram.TabIndex = 0;
+            this.checkAnagram.Text = "Check Anagram\r\nand \r\nDisplay";
+            this.checkAnagram.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // richTextBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(311, 202);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 18);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Show here the results.";
+            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(100, 96);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
             // 
-            // Form1
+            // Anagrams
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Anagrams.Location = new System.Drawing.Point(33, 24);
+            this.Anagrams.Name = "Anagrams";
+            this.Anagrams.Size = new System.Drawing.Size(148, 72);
+            this.Anagrams.TabIndex = 0;
+            this.Anagrams.Text = "button1";
+            this.Anagrams.UseVisualStyleBackColor = true;
+            this.Anagrams.Click += new System.EventHandler(this.Anagrams_Click);
+            // 
+            // richTextBox2
+            // 
+            this.richTextBox2.Location = new System.Drawing.Point(205, 24);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(616, 307);
+            this.richTextBox2.TabIndex = 1;
+            this.richTextBox2.Text = "";
+            // 
+            // Anagram
+            // 
+            this.ClientSize = new System.Drawing.Size(833, 343);
+            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.Anagrams);
+            this.Name = "Anagram";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Button button1;
-        private Label label1;
+        private Button checkAnagram;
+        private RichTextBox richTextBox1;
+        private Button Anagrams;
+        private RichTextBox richTextBox2;
     }
 }
