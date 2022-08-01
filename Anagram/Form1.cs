@@ -9,9 +9,9 @@ namespace Anagram
         }
         private void Anagrams_Click(object sender, EventArgs e)
         {
-            string[] wordCount = System.IO.File.ReadAllText(@"C:\Users\Krasskoo\Desktop\Untitled.txt").Split(new char[] { '.', '?', '!', ' ', ';', ':', ',' }, StringSplitOptions.RemoveEmptyEntries);
+            string[] wordCount = System.IO.File.ReadAllText(@"C:\Users\Krasskoo\Desktop\WordList.txt").Split(new char[] { '.', '?', '!', ' ', ';', ':', ',' }, StringSplitOptions.RemoveEmptyEntries);
             int totalWords = wordCount.Count();
-            String [] wordList = System.IO.File.ReadAllText(@"C:\Users\Krasskoo\Desktop\Untitled.txt").Split();
+            String [] wordList = System.IO.File.ReadAllText(@"C:\Users\Krasskoo\Desktop\WordList.txt").Split();
             String inputString = "documenting";
 
             
@@ -22,20 +22,17 @@ namespace Anagram
 
             for (int i=0; i<wordCount.Length; i++)
             {
-                char[] wrdArray2 = wordList[0].ToUpper().ToCharArray();
+                char[] wrdArray2 = wordList[i].ToUpper().ToCharArray();
                 Array.Sort(wrdArray2);
                 String newWord2 = new string(wrdArray2);
                 if (newWord2 == newWord1)
                 {
-                    richTextBox2.Text = wordList[i];
+                    string [] matchedWords;
+
+                    //richTextBox2.Text = wordList[i];
+                    MessageBox.Show(wordList[i]);
                 }
-                MessageBox.Show(newWord2);
             }
-
-           // MessageBox.Show(totalWords.ToString());
-
-           // if (newWord1 == newWord2)
-             //   richTextBox2.Text = wordList[wordCount];
         }
     }
 }
