@@ -59,7 +59,7 @@
             this.Anagrams.Name = "Anagrams";
             this.Anagrams.Size = new System.Drawing.Size(148, 72);
             this.Anagrams.TabIndex = 0;
-            this.Anagrams.Text = "button1";
+            this.Anagrams.Text = "Show Anagrams";
             this.Anagrams.UseVisualStyleBackColor = true;
             this.Anagrams.Click += new System.EventHandler(this.Anagrams_Click);
             // 
