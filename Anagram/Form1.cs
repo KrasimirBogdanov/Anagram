@@ -28,13 +28,21 @@ namespace Anagram
                 for (int i = 0; i < wordCount.Length; i++)
                 {
                     char[] wrdArray2 = wordList[i].ToUpper().ToCharArray();
-                    Array.Sort(wrdArray2);
-                    String newWord2 = new string(wrdArray2);
+                    char[] wrdArray3 = wordList[i+1].ToUpper().ToCharArray();
+                    List<char> list = new List<char>(wrdArray2.Length + wrdArray3.Length);
+                    list.AddRange(wrdArray2);
+                    list.AddRange(wrdArray3);
+                    list.ToArray();
+                    char[] concated = list.ToArray();
+                    Array.Sort(concated);
+                    String newWord2 = new string(concated);
 
                     if (newWord2 == newWord1)
                     {
-                        string matchedWord = wordList[i];
-                        matchedWordsListFinal.Add(matchedWord);
+                        string matchedWord1 = wordList[i];
+                        string matchedWord2 = wordList[i+1];
+                        matchedWordsListFinal.Add(matchedWord1);
+                        matchedWordsListFinal.Add(matchedWord2);
                     }
                     richTextBox2.Lines = matchedWordsListFinal.ToArray();
                     if (matchedWordsListFinal.Count == 0)
