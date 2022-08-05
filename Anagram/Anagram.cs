@@ -25,6 +25,17 @@ namespace Anagram
                 Array.Sort(wrdArray1);
                 String newWord1 = new string(wrdArray1);
 
+                for (int j = 0; j < wordCount.Length; j++)
+                {
+                    char[] wrdArrayFirstCheck = wordList[j].ToUpper().ToCharArray();
+                    Array.Sort(wrdArrayFirstCheck);
+                    String newWordFirstCheck = new string(wrdArrayFirstCheck);
+                    if (newWordFirstCheck == newWord1)
+                    {
+                        string matchedWord = wordList[j];
+                        matchedWordsListFinal.Add(matchedWord);
+                    }
+                }
                 for (int i = 0; i < wordCount.Length; i++)
                 {
                     char[] wrdArray2 = wordList[i].ToUpper().ToCharArray();
