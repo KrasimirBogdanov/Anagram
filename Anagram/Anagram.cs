@@ -9,17 +9,16 @@ namespace Anagram
         }
         private void Anagrams_Click(object sender, EventArgs e)
         { 
-                if(inputStringBox.Text == "")
+                if (inputStringBox.Text == "")
                 {
-                MessageBox.Show("Please input string first!");
+                    MessageBox.Show("Please input string first!");
                 }
 
-                string[] wordCount = System.IO.File.ReadAllText(@"C:\Users\Krasskoo\Desktop\WordList.txt").Split(new char[] { '.', '?', '!', ' ', ';', ':', ',', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-                int totalWords = wordCount.Count();
-
                 String[] wordList = System.IO.File.ReadAllText(@"C:\Users\Krasskoo\Desktop\WordList.txt").Split(new char[] { '.', '?', '!', ' ', ';', ':', ',', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-                String inputString = inputStringBox.Text;
+                int totalWords = wordList.Length;
 
+                String inputString = inputStringBox.Text;
+ 
                 List<string> matchedWordsListFinal = new List<string>();
 
                 char[] inputStringChars= inputString.ToUpper().ToCharArray();
