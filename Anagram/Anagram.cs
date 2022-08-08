@@ -15,10 +15,10 @@ namespace Anagram
             }
             else
             {
-                string[] wordCount = System.IO.File.ReadAllText(@"C:\Users\Krasskoo\Desktop\WordList.txt").Split(new char[] { '.', '?', '!', ' ', ';', ':', ',' }, StringSplitOptions.RemoveEmptyEntries);
+                string[] wordCount = System.IO.File.ReadAllText(@"C:\Users\Krasskoo\Desktop\WordList.txt").Split(new char[] { '.', '?', '!', ' ', ';', ':', ',', '\n' }, StringSplitOptions.RemoveEmptyEntries);
                 int totalWords = wordCount.Count();
 
-                String[] wordList = System.IO.File.ReadAllText(@"C:\Users\Krasskoo\Desktop\WordList.txt").Split();
+                String[] wordList = System.IO.File.ReadAllText(@"C:\Users\Krasskoo\Desktop\WordList.txt").Split(new char[] { '.', '?', '!', ' ', ';', ':', ',', '\n' }, StringSplitOptions.RemoveEmptyEntries);
                 String inputString = textBox1.Text;
 
                 List<string> matchedWordsListFinal = new List<string>();
@@ -26,7 +26,8 @@ namespace Anagram
                 char[] inputStringChars= inputString.ToUpper().ToCharArray();
                 Array.Sort(inputStringChars);
                 String sortedInputString = new string(inputStringChars);
-                for (int m=0; m<totalWords - 1; m++)
+
+                for (int m=0; m<totalWords; m++)
                 {
                     int inputStringLength = inputString.Length;
                     int comparedWordLength = wordList[m].Length;
@@ -44,7 +45,7 @@ namespace Anagram
                     }
                      else
                      {
-                        for (int n = 0; n < totalWords - 1; n++)
+                        for (int n = 0; n < totalWords; n++)
                         {
                             int nextWordOfListLength = wordList[n].Length;
                             int concatenatedWordsLength = comparedWordLength + nextWordOfListLength;
