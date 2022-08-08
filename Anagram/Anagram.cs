@@ -26,7 +26,6 @@ namespace Anagram
                 char[] inputStringChars= inputString.ToUpper().ToCharArray();
                 Array.Sort(inputStringChars);
                 String sortedInputString = new string(inputStringChars);
-                
                 for (int m=0; m<totalWords - 1; m++)
                 {
                     int inputStringLength = inputString.Length;
@@ -45,29 +44,32 @@ namespace Anagram
                     }
                      else
                      {
-                         for (int n = 0; n < totalWords - 1; n++)
-                         {
-                             int nextWordOfListLength = wordList[n].Length;
-                             int concatenatedWordsLength = comparedWordLength + nextWordOfListLength;
+                        for (int n = 0; n < totalWords - 1; n++)
+                        {
+                            int nextWordOfListLength = wordList[n].Length;
+                            int concatenatedWordsLength = comparedWordLength + nextWordOfListLength;
 
-                             if (inputStringLength == concatenatedWordsLength)
-                             {
-                                 char[] comparedWord = wordList[m].ToUpper().ToCharArray();
-                                 char[] nextWordOfList = wordList[n].ToUpper().ToCharArray();
-                                 List<char> list = new List<char>(comparedWord.Length + nextWordOfList.Length);
-                                 list.AddRange(comparedWord);
-                                 list.AddRange(nextWordOfList);
-                                 list.ToArray();
-                                 char[] concatenatedChars = list.ToArray();
-                                 Array.Sort(concatenatedChars);
-                                 String concatenatedComparedWord = new string(concatenatedChars);
+                            if (nextWordOfListLength > 0 && comparedWordLength > 0)
+                            {
+                                if (inputStringLength == concatenatedWordsLength)
+                                {
+                                    char[] comparedWord = wordList[m].ToUpper().ToCharArray();
+                                    char[] nextWordOfList = wordList[n].ToUpper().ToCharArray();
+                                    List<char> list = new List<char>(comparedWord.Length + nextWordOfList.Length);
+                                    list.AddRange(comparedWord);
+                                    list.AddRange(nextWordOfList);
+                                    list.ToArray();
+                                    char[] concatenatedChars = list.ToArray();
+                                    Array.Sort(concatenatedChars);
+                                    String concatenatedComparedWord = new string(concatenatedChars);
 
-                                 if (sortedInputString == concatenatedComparedWord)
-                                 {
-                                     matchedWordsListFinal.Add(wordList[m] + " + " + wordList[n]);
-                                     richTextBox2.Lines = matchedWordsListFinal.ToArray();
-                                }  
-                             }
+                                    if (sortedInputString == concatenatedComparedWord)
+                                    {
+                                        matchedWordsListFinal.Add(wordList[m] + " + " + wordList[n]);
+                                        richTextBox2.Lines = matchedWordsListFinal.ToArray();
+                                    }
+                                }
+                            }
                          }
                      }
                 }
