@@ -9,7 +9,7 @@ namespace Anagram
         }
         private void Anagrams_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (inputStringBox.Text == "")
             {
                 MessageBox.Show("Please insert string first!");
             }
@@ -19,7 +19,7 @@ namespace Anagram
                 int totalWords = wordCount.Count();
 
                 String[] wordList = System.IO.File.ReadAllText(@"C:\Users\Krasskoo\Desktop\WordList.txt").Split(new char[] { '.', '?', '!', ' ', ';', ':', ',', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-                String inputString = textBox1.Text;
+                String inputString = inputStringBox.Text;
 
                 List<string> matchedWordsListFinal = new List<string>();
 
