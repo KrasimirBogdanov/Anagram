@@ -11,14 +11,15 @@ namespace Anagram
         { 
                 if (inputStringBox.Text == "")
                 {
-                    MessageBox.Show("Please input string first!");
+                    MessageBox.Show("First, enter a word to be checked for anagrams!");
                 }
 
                 String[] wordList = System.IO.File.ReadAllText(@"C:\Users\Krasskoo\Desktop\WordList.txt").Split(new char[] { '.', '?', '!', ' ', ';', ':', ',', '\n' }, StringSplitOptions.RemoveEmptyEntries);
                 int totalWords = wordList.Length;
 
                 String inputString = inputStringBox.Text;
- 
+                int inputStringLength = inputString.Length;
+                
                 List<string> matchedWordsListFinal = new List<string>();
 
                 char[] inputStringChars= inputString.ToUpper().ToCharArray();
@@ -27,7 +28,6 @@ namespace Anagram
 
                 for (int m=0; m<totalWords; m++)
                 {
-                    int inputStringLength = inputString.Length;
                     int comparedWordLength = wordList[m].Length;
 
                     if (inputStringLength == comparedWordLength)
