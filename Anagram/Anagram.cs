@@ -54,11 +54,11 @@ namespace Anagram
                                 {
                                     char[] comparedWord = wordList[m].ToUpper().ToCharArray();
                                     char[] nextWordOfList = wordList[n].ToUpper().ToCharArray();
-                                    List<char> list = new List<char>(comparedWord.Length + nextWordOfList.Length);
-                                    list.AddRange(comparedWord);
-                                    list.AddRange(nextWordOfList);
-                                    list.ToArray();
-                                    char[] concatenatedChars = list.ToArray();
+                                    List<char> concatenatedLengths = new List<char>(comparedWord.Length + nextWordOfList.Length);
+                                    concatenatedLengths.AddRange(comparedWord);
+                                    concatenatedLengths.AddRange(nextWordOfList);
+                                    concatenatedLengths.ToArray();
+                                    char[] concatenatedChars = concatenatedLengths.ToArray();
                                     Array.Sort(concatenatedChars);
                                     String concatenatedComparedWord = new string(concatenatedChars);
 
