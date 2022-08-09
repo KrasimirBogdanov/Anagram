@@ -32,7 +32,7 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.Anagrams = new System.Windows.Forms.Button();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.inputStringBox = new System.Windows.Forms.TextBox();
+            this.inputWordBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -73,12 +73,12 @@
             this.richTextBox2.TabIndex = 1;
             this.richTextBox2.Text = "";
             // 
-            // inputStringBox
+            // inputWordBox
             // 
-            this.inputStringBox.Location = new System.Drawing.Point(27, 76);
-            this.inputStringBox.Name = "inputStringBox";
-            this.inputStringBox.Size = new System.Drawing.Size(148, 23);
-            this.inputStringBox.TabIndex = 2;
+            this.inputWordBox.Location = new System.Drawing.Point(27, 76);
+            this.inputWordBox.Name = "inputWordBox";
+            this.inputWordBox.Size = new System.Drawing.Size(148, 23);
+            this.inputWordBox.TabIndex = 2;
             // 
             // label1
             // 
@@ -93,7 +93,7 @@
             // 
             this.ClientSize = new System.Drawing.Size(833, 343);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.inputStringBox);
+            this.Controls.Add(this.inputWordBox);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.Anagrams);
             this.Name = "Anagram";
@@ -108,7 +108,7 @@
         private RichTextBox richTextBox1;
         private Button Anagrams;
         private RichTextBox richTextBox2;
-        private TextBox inputStringBox;
+        private TextBox inputWordBox;
         private Label label1;
     }
 }

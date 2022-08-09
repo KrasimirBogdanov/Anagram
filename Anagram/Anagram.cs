@@ -9,7 +9,7 @@ namespace Anagram
         }
         private void Anagrams_Click(object sender, EventArgs e)
         { 
-                if (inputStringBox.Text == "")
+                if (inputWordBox.Text == "")
                 {
                     MessageBox.Show("First, enter a word to be checked for anagrams!");
                 }
@@ -17,7 +17,7 @@ namespace Anagram
                 String[] wordList = System.IO.File.ReadAllText(@"C:\Users\Krasskoo\Desktop\WordList.txt").Split(new char[] { '.', '?', '!', ' ', ';', ':', ',', '\n' }, StringSplitOptions.RemoveEmptyEntries);
                 int totalWords = wordList.Length;
 
-                String inputString = inputStringBox.Text;
+                String inputString = inputWordBox.Text;
                 int inputStringLength = inputString.Length;
                 
                 List<string> matchedWordsListFinal = new List<string>();
