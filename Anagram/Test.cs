@@ -10,15 +10,15 @@ namespace Anagram
     public class Test
     {
         [Fact]
-        public void wordCountAgain()
+        public void WordCount()
         {
             Anagram an = new Anagram();
 
             int expected = 1907;
 
-        //    int actual = an.WordLoad();
+            int actual = an.WordLoad();
 
-         //   Assert.Equal(expected, actual);
+            Assert.Equal(expected, actual);
         }
 
 

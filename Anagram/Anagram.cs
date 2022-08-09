@@ -3,73 +3,59 @@ namespace Anagram
 {
     public partial class Anagram : Form
     {
+        private String[] wordList;
+        List<string> matchedWordsListFinal;
         public Anagram()
         {
             InitializeComponent();
-        }
-        public double Add(double x, double y)
-        {
-            inputWordBox.Text = "Test";
-            return x + y;
+            this.wordList = new String[] { };
+            this.matchedWordsListFinal = new List<string>();
+
         }
 
-        /* public int WordLoad()
-          {
-              String[] wordList = System.IO.File.ReadAllText(@"C:\Users\Krasskoo\Desktop\WordList.txt").Split(new char[] { '.', '?', '!', ' ', ';', ':', ',', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-              int totalWords = wordList.Length;
-
-              return totalWords;
-          }
-        */
-        private void Anagrams_Click(object sender, EventArgs e)
+        public int WordLoad()
         {
-            if (inputWordBox.Text == "")
-            {
-                MessageBox.Show("First, enter a word to be checked for anagrams!");
-            }
-
-            String[] wordList = System.IO.File.ReadAllText(@"C:\Users\Krasskoo\Desktop\WordList.txt").Split(new char[] { '.', '?', '!', ' ', ';', ':', ',', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-            int totalWords = wordList.Length;
-
+            this.wordList = System.IO.File.ReadAllText(@"C:\Users\Krasskoo\Desktop\WordList.txt").Split(new char[] { '.', '?', '!', ' ', ';', ':', ',', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            return this.wordList.Length;
+        }
+        public int FillMatchedWords(int totalWords)
+        {
             String inputString = inputWordBox.Text;
             int inputStringLength = inputString.Length;
 
-            List<string> matchedWordsListFinal = new List<string>();
-
             char[] inputStringChars = inputString.ToUpper().ToCharArray();
             Array.Sort(inputStringChars);
-            String sortedInputString = new string(inputStringChars);
 
+            String sortedInputString = new string(inputStringChars);
             for (int m = 0; m < totalWords; m++)
             {
-                int comparedWordLength = wordList[m].Length;
+                String comparedWord = this.wordList[m];
 
-                if (inputStringLength == comparedWordLength)
+                if (inputStringLength == comparedWord.Length)
                 {
-                    char[] comparedWordChars = wordList[m].ToUpper().ToCharArray();
+                    char[] comparedWordChars = comparedWord.ToUpper().ToCharArray();
                     Array.Sort(comparedWordChars);
                     String sortedComparedWord = new String(comparedWordChars);
                     if (sortedInputString != sortedComparedWord)
                         continue;
-                    matchedWordsListFinal.Add(wordList[m]);
-                    richTextBox2.Lines = matchedWordsListFinal.ToArray();
+                    matchedWordsListFinal.Add(comparedWord);
 
                 }
                 else
                 {
                     for (int n = 0; n < totalWords; n++)
                     {
-                        int nextWordOfListLength = wordList[n].Length;
-                        int concatenatedWordsLength = comparedWordLength + nextWordOfListLength;
+                        int nextWordOfListLength = this.wordList[n].Length;
+                        int concatenatedWordsLength = comparedWord.Length + nextWordOfListLength;
 
-                        if (nextWordOfListLength == 0 || comparedWordLength == 0)
+                        if (nextWordOfListLength == 0 || comparedWord.Length == 0)
                             continue;
                         if (inputStringLength != concatenatedWordsLength)
                             continue;
-                        char[] comparedWord = wordList[m].ToUpper().ToCharArray();
-                        char[] nextWordOfList = wordList[n].ToUpper().ToCharArray();
-                        List<char> concatenatedLengths = new List<char>(comparedWord.Length + nextWordOfList.Length);
-                        concatenatedLengths.AddRange(comparedWord);
+                        char[] comparedWordChar = comparedWord.ToUpper().ToCharArray();
+                        char[] nextWordOfList = this.wordList[n].ToUpper().ToCharArray();
+                        List<char> concatenatedLengths = new List<char>(comparedWordChar.Length + nextWordOfList.Length);
+                        concatenatedLengths.AddRange(comparedWordChar);
                         concatenatedLengths.AddRange(nextWordOfList);
                         concatenatedLengths.ToArray();
                         char[] concatenatedChars = concatenatedLengths.ToArray();
@@ -78,11 +64,23 @@ namespace Anagram
 
                         if (sortedInputString != concatenatedComparedWord)
                             continue;
-                        matchedWordsListFinal.Add(wordList[m] + " + " + wordList[n]);
-                        richTextBox2.Lines = matchedWordsListFinal.ToArray();
+                        matchedWordsListFinal.Add(comparedWord + " + " + this.wordList[n]);
                     }
                 }
             }
+            return this.matchedWordsListFinal.Count;
+        }
+        private void Anagrams_Click(object sender, EventArgs e)
+        {
+            if (inputWordBox.Text == "")
+            {
+                MessageBox.Show("First, enter a word to be checked for anagrams!");
+            }
+
+            int totalWords = WordLoad();
+            FillMatchedWords(totalWords);
+
+            richTextBox2.Lines = matchedWordsListFinal.ToArray();
         }
     }
 }
