@@ -48,8 +48,8 @@ namespace Anagram
                         int nextWordOfListLength = this.wordList[n].Length;
                         int concatenatedWordsLength = comparedWord.Length + nextWordOfListLength;
 
-                        if (nextWordOfListLength == 0 || comparedWord.Length == 0)
-                            continue;
+                        //if (nextWordOfListLength == 0 || comparedWord.Length == 0)
+                          //  continue;
                         if (inputStringLength != concatenatedWordsLength)
                             continue;
                         char[] comparedWordChar = comparedWord.ToUpper().ToCharArray();
