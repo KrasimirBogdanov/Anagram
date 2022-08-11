@@ -80,7 +80,7 @@ namespace Anagram
             int totalWords = WordLoad();
             FillMatchedWords(totalWords);
 
-            richTextBox2.Lines = matchedWordsListFinal.ToArray();
+            wordListBox.Lines = matchedWordsListFinal.ToArray();
         }
     }
 }

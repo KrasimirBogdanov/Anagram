@@ -31,7 +31,7 @@
             this.checkAnagram = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.Anagrams = new System.Windows.Forms.Button();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.wordListBox = new System.Windows.Forms.RichTextBox();
             this.inputWordBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -65,13 +65,13 @@
             this.Anagrams.UseVisualStyleBackColor = true;
             this.Anagrams.Click += new System.EventHandler(this.Anagrams_Click);
             // 
-            // richTextBox2
+            // wordListBox
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(205, 12);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(616, 307);
-            this.richTextBox2.TabIndex = 1;
-            this.richTextBox2.Text = "";
+            this.wordListBox.Location = new System.Drawing.Point(205, 12);
+            this.wordListBox.Name = "wordListBox";
+            this.wordListBox.Size = new System.Drawing.Size(616, 307);
+            this.wordListBox.TabIndex = 1;
+            this.wordListBox.Text = "";
             // 
             // inputWordBox
             // 
@@ -94,7 +94,7 @@
             this.ClientSize = new System.Drawing.Size(833, 343);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.inputWordBox);
-            this.Controls.Add(this.richTextBox2);
+            this.Controls.Add(this.wordListBox);
             this.Controls.Add(this.Anagrams);
             this.Name = "Anagram";
             this.ResumeLayout(false);
@@ -107,7 +107,7 @@
         private Button checkAnagram;
         private RichTextBox richTextBox1;
         private Button Anagrams;
-        private RichTextBox richTextBox2;
+        private RichTextBox wordListBox;
         private TextBox inputWordBox;
         private Label label1;
     }
