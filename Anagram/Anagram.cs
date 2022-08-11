@@ -13,7 +13,7 @@ namespace Anagram
 
         }
 
-        public int WordLoad()
+        public int LoadWords()
         {
             this.wordList = System.IO.File.ReadAllText(@"C:\Users\Krasskoo\Desktop\WordList.txt").Split(new char[] { '.', '?', '!', ' ', ';', ':', ',', '\n' }, StringSplitOptions.RemoveEmptyEntries);
             return this.wordList.Length;
@@ -77,7 +77,7 @@ namespace Anagram
                 MessageBox.Show("First, enter a word to be checked for anagrams!");
             }
 
-            int totalWords = WordLoad();
+            int totalWords = LoadWords();
             FillMatchedWords(totalWords);
 
             wordListBox.Lines = matchedWordsListFinal.ToArray();

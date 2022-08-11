@@ -16,7 +16,7 @@ namespace Anagram
 
             int expected = 1907;
 
-            int actual = an.WordLoad();
+            int actual = an.LoadWords();
 
             Assert.Equal(expected, actual);
         }
