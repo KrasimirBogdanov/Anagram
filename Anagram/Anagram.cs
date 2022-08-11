@@ -57,7 +57,6 @@ namespace Anagram
                         List<char> concatenatedLengths = new List<char>(comparedWordChar.Length + nextWordOfList.Length);
                         concatenatedLengths.AddRange(comparedWordChar);
                         concatenatedLengths.AddRange(nextWordOfList);
-                        concatenatedLengths.ToArray();
                         char[] concatenatedChars = concatenatedLengths.ToArray();
                         Array.Sort(concatenatedChars);
                         String concatenatedComparedWord = new string(concatenatedChars);
