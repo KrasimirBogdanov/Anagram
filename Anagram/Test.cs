@@ -20,7 +20,17 @@ namespace Anagram
 
             Assert.Equal(expected, actual);
         }
+        /*
+        public void MatchedWords()
+        {
+            Anagram an = new Anagram();
 
+            int expected = 4;
 
+            int actual = an.FillMatchedWords(an.LoadWords());
+
+            Assert.Equal(expected, actual);
+        }
+        */
     }
 }
