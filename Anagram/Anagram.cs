@@ -18,7 +18,7 @@ namespace Anagram
             this.wordList = System.IO.File.ReadAllText(@"C:\Users\Krasskoo\Desktop\WordList.txt").Split(new char[] { '.', '?', '!', ' ', ';', ':', ',', '\n' }, StringSplitOptions.RemoveEmptyEntries);
             return this.wordList.Length;
         }
-        public int FillMatchedWords(int totalWords)
+        public void FillMatchedWords(int totalWords)
         {
             String inputString = inputWordBox.Text;
             int inputStringLength = inputString.Length;
@@ -67,7 +67,6 @@ namespace Anagram
                     }
                 }
             }
-            return this.matchedWordsListFinal.Count;
         }
         private void Anagrams_Click(object sender, EventArgs e)
         {
